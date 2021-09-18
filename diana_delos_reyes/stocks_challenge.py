@@ -20,6 +20,39 @@ stock = input("Which stock are you interested in? \nType\n 'amzn' for Amazon,\n 
 
 # print("Challenge 3.2.2: Perform user-specific calculations")
 # You have all 3 user inputs stores in variables. Based on that, write conditional (if-elif-else) statements to find out the number of stocks of the company that can be purchased with the savings amount.
+
+# print("Challenge 3.2.3: Output for the user the result")
+
+
+if stock == "amzn" and savings >= amazon:
+        amazon_shares = savings / amazon
+        yes_amazon = f'{name} has {savings} in savings and he can buy {amazon_shares} shares of {stock} at the current price of {amazon}'
+        print(yes_amazon)
+elif stock == "aapl" and savings >= apple:
+        aapl_shares = savings / apple
+        yes_apple = f'{name} has {savings} in savings and he can buy {aapl_shares} shares of {stock} at the current price of {apple}'
+        print(yes_apple)
+elif stock == "fb" and savings >= fb:
+        fb_shares = savings / fb
+        yes_fb = f'{name} has {savings} in savings and he can buy {fb_shares} shares of {stock} at the current price of {fb}'
+        print(yes_fb)
+elif stock == "goog" and savings >= google:
+        goog_shares = savings / google
+        yes_goog = f'{name} has {savings} in savings and he can buy {goog_shares} shares of {stock} at the current price of {google}'
+        print(yes_goog)
+elif stock == "msft" and savings >= msft:
+        msft_shares = savings / msft
+        yes_msft = f'{name} has {savings} in savings and he can buy {msft_shares} shares of {stock} at the current price of {msft}'
+        print(yes_msft)
+else:
+        print('you do not have enough money in your savings to buy any shares.')
+#########################################
+#########################################
+#########################################
+#########################################
+#########################################
+#########################################
+#########################################
 # if stock == "amzn":
 #     if savings >= amazon:
 #         amazon_shares = savings / amazon
@@ -64,36 +97,4 @@ stock = input("Which stock are you interested in? \nType\n 'amzn' for Amazon,\n 
 
 
 
-
-
-
-
-# print("Challenge 3.2.3: Output for the user the result")
-# Once you have calculated the number of stocks that can be purchased, print the result for the client. Result should be in a format like this:
-
-# Alex has $5000 in savings and he can buy 50 shares of Apple at the current price of $100.
-
-
-if stock == "amzn" and savings >= amazon:
-        amazon_shares = savings / amazon
-        yes_amazon = f'{name} has {savings} in savings and he can buy {amazon_shares} shares of {stock} at the current price of {amazon}'
-        print(yes_amazon)
-elif stock == "aapl" and savings >= apple:
-        aapl_shares = savings / apple
-        yes_apple = f'{name} has {savings} in savings and he can buy {aapl_shares} shares of {stock} at the current price of {apple}'
-        print(yes_apple)
-elif stock == "fb" and savings >= fb:
-        fb_shares = savings / fb
-        yes_fb = f'{name} has {savings} in savings and he can buy {fb_shares} shares of {stock} at the current price of {fb}'
-        print(yes_fb)
-elif stock == "goog" and savings >= google:
-        goog_shares = savings / google
-        yes_goog = f'{name} has {savings} in savings and he can buy {goog_shares} shares of {stock} at the current price of {google}'
-        print(yes_goog)
-elif stock == "msft" and savings >= msft:
-        msft_shares = savings / msft
-        yes_msft = f'{name} has {savings} in savings and he can buy {msft_shares} shares of {stock} at the current price of {msft}'
-        print(yes_msft)
-else:
-        print('you do not have enough money in your savings to buy any shares.')
 
