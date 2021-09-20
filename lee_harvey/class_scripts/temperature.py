@@ -36,8 +36,8 @@ print(str(convert_to_fahrenheit(5)) + " fahrenheit\n")
 
 # 5. Define the converted value of degrees_c for comparison
 print('5.')
-degrees_c_converted = convert_to_celsius(degrees_c)
-
+degrees_c_converted = convert_to_fahrenheit(degrees_c)
+print(f'{degrees_c}, {degrees_c_converted}, {degrees_f}')
 # 5. Display the result of the comparison
 if(degrees_c_converted == degrees_f):
     print("They are the same temperature.\n")
