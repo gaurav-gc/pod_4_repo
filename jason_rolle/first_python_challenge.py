@@ -1,4 +1,3 @@
-
 #print('1: Describe what is happening below by adding comments before each line')
 
 box_1 = 'books'
@@ -13,10 +12,6 @@ print(box_3)
 box_4 = 'kitchen stuff'
 print(box_4)
 #assigning the variable box_4 to the strinf "kitchen stuff"
-
-
-
-
 
 
 #print('2: Print the variables box_1, box_2, box_3, box_4')
@@ -41,7 +36,6 @@ print(box_4)
 completion_message = 'Completed the first Python challenge!'
 print(completion_message)
 #print('5.2: Turn the comment below back into regular Python code')
-
 print(completion_message)
 
 
