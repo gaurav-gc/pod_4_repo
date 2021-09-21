@@ -35,12 +35,12 @@ print("Code Snippet 3:")
 #modify the comparison operator below so the assert statement passes
 #update the print statement to reflect changes to the code
 
-a = 2
+a = 1
 b = 1
-c = (a > b)
+c = (a == b)
 
 print(f"The value of c ({c}) is True since a ({a}) is greater than b ({b}). \
-\nChanged the value of 'a' so that it was greater than 'b'")
+\nChanged the comparison operator to equals to ensure true evaluation.")
 assert(c == True) #Do not change this line
 
 print()
