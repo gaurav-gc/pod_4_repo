@@ -66,7 +66,7 @@ print("Challenge 3.2.3: Output for the user the result")
 if stock == 'amzn' or stock == 'aapl' or stock == 'fb' or stock == 'goog' or stock == 'msft':
     print(f'{name} has ${savings} and can buy {shares} shares of {company} at the current price of ${price}.')
 else:
-    print('That is not a valid stock choice.')
+    print('That is not one of the valid stock choices.')
 
 print()
 

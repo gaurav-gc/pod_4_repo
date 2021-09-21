@@ -36,7 +36,7 @@ print()
 print("Code Snippet 3:")
 
 #modify the comparison operator below so the assert statement passes
-#update the print statement to reflect changes to the code
+#update the print statement to reflect the changes to the code
 
 a = 1
 b = 1
