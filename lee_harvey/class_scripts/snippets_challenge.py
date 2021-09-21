@@ -39,7 +39,7 @@ a = 1
 b = 1
 c = (a == b)
 
-print(f"The value of c ({c}) is True since a ({a}) is greater than b ({b}). \
+print(f"The value of c ({c}) is True since a ({a}) is equal to b ({b}). \
 \nChanged the comparison operator to equals to ensure true evaluation.")
 assert(c == True) #Do not change this line
 
