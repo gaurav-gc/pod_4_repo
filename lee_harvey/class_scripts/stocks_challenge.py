@@ -58,8 +58,9 @@ def get_stock_cost(nam):
         return msft
 
 def stock_purchase(sa, us):
-    if int(us / sa):
-        return 0
+    if sa and us:
+        if int(us / sa):
+            return 0
     return 1
 
 def report(name, savings, stock, cost):
