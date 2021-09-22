@@ -6,7 +6,7 @@ google = 1400
 msft = 200
 
 stock_amt = 0
-stock = 0
+stock_amt = 0
 s_name = ''
 u_name = ""
 u_stock = ""
@@ -57,11 +57,13 @@ def get_stock_name(amt):
     elif amt == msft:
         return 'Microsoft'
 
-
 def stock_purchase(sa, us):
     if int(us / sa):
         return 0
     return 1
+
+def report(name, savings, stock, cost):
+    print(f"{name} has {savings} in savings and he can buy int({savings / cost}) of {stock} at the current price of {cost}.")
 
 print("Challenge 3.2: Playing with the stock market")
 
@@ -86,17 +88,19 @@ print("Challenge 3.2.2: Perform user-specific calculations")
 # Based on that, write conditional (if-elif-else) statements to find out the number of stocks of the company that can be purchased with the savings amount.
 
 assert(u_savings > 0)
-#assert(u_stock == 'amzn' or u_stock == 'appl' or u_stock == 'fb' or u_stock == 'goog' or u_stock == 'msft')
+
 
 # More concise way
 
-stock = evaluate(u_stock)
-while not stock:
-    stock = evaluate(get_stock())
-s_name = get_stock_name(stock)
-while stock_purchase(stock, u_savings):
+stock_amt = evaluate(u_stock)
+while not stock_amt:
+    stock_amt = evaluate(get_stock())
+
+#assert(u_stock == 'amzn' or u_stock == 'appl' or u_stock == 'fb' or u_stock == 'goog' or u_stock == 'msft')
+s_name = get_stock_name(stock_amt)
+while stock_purchase(stock_amt, u_savings):
     print(f"I'm sorry, {u_name}, you don't have enough to purchase that stock.  Please choose another.")
-    stock = evaluate(get_stock())
+    stock_amt = evaluate(get_stock())
 
 '''
 Your code should look like this:
@@ -113,7 +117,7 @@ print("Challenge 3.2.3: Output for the user the result")
 # Once you have calculated the number of stocks that can be purchased, print the result for the client. Result should be in a format like this:
 
 # Alex has $5000 in savings and he can buy 50 shares of Apple at the current price of $100.
-print(f"{u_name} has {u_savings} in savings and he can buy {int(u_savings / stock)} of {s_name} at the current price of {stock}.")
+report(u_name, u_savings, s_name, stock_amt)
 
 print()
 
