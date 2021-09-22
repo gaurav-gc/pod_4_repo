@@ -34,28 +34,28 @@ def evaluate(s):
     #     case 'msft':
     #         return msft, 'Microsoft'
     if s == 'amzn':
-        return amazon
-    elif s == 'appl':
-        return apple
-    elif s == 'fb':
-        return fb
-    elif s == 'goog':
-        return google
-    elif s == 'msft':
-        return msft
-    else:
-        s = get_stock()
-def get_stock_name(amt):
-    if amt == amazon:
         return 'Amazon'
-    elif amt == apple:
+    elif s == 'appl':
         return 'Apple'
-    elif amt == fb:
+    elif s == 'fb':
         return 'Facebook'
-    elif amt == google:
+    elif s == 'goog':
         return 'Google'
-    elif amt == msft:
+    elif s == 'msft':
         return 'Microsoft'
+    evaluate(get_stock())
+
+def get_stock_cost(nam):
+    if nam == 'Amazon':
+        return amazon
+    elif nam == 'Apple':
+        return apple
+    elif nam == 'Facebook':
+        return fb
+    elif nam == 'Google':
+        return google
+    elif nam == 'Microsoft':
+        return msft
 
 def stock_purchase(sa, us):
     if int(us / sa):
@@ -63,7 +63,7 @@ def stock_purchase(sa, us):
     return 1
 
 def report(name, savings, stock, cost):
-    print(f"{name} has {savings} in savings and he can buy int({savings / cost}) of {stock} at the current price of {cost}.")
+    print(f"{name} has {savings} in savings and he can buy {int(savings / cost)} of {stock} at the current price of {cost}.")
 
 print("Challenge 3.2: Playing with the stock market")
 
@@ -86,21 +86,17 @@ print()
 print("Challenge 3.2.2: Perform user-specific calculations")
 # You have all 3 user inputs stores in variables. 
 # Based on that, write conditional (if-elif-else) statements to find out the number of stocks of the company that can be purchased with the savings amount.
-
-assert(u_savings > 0)
-
+# assert(u_stock == 'amzn' or u_stock == 'appl' or u_stock == 'fb' or u_stock == 'goog' or u_stock == 'msft')
+# assert(u_savings > 0)
 
 # More concise way
 
-stock_amt = evaluate(u_stock)
-while not stock_amt:
-    stock_amt = evaluate(get_stock())
-
-#assert(u_stock == 'amzn' or u_stock == 'appl' or u_stock == 'fb' or u_stock == 'goog' or u_stock == 'msft')
-s_name = get_stock_name(stock_amt)
+s_name = evaluate(u_stock)
+stock_amt = get_stock_cost(s_name)
 while stock_purchase(stock_amt, u_savings):
     print(f"I'm sorry, {u_name}, you don't have enough to purchase that stock.  Please choose another.")
-    stock_amt = evaluate(get_stock())
+    s_name = evaluate(get_stock())
+    stock_amt = get_stock_cost(s_name)
 
 '''
 Your code should look like this:
