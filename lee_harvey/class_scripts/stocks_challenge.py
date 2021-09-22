@@ -1,6 +1,15 @@
-print("Challenge 3.2: Playing with the stock market")
+# Creating variables to store the current (approximate) market price of these 5 companies - Amazon, Apple, Facebook, Google and Microsoft.
+amazon = 3000
+apple = 100
+fb = 250
+google = 1400
+msft = 200
 
-print()
+stock_amt = 0
+stock = 0
+s_name = ''
+u_name = ""
+u_stock = ""
 
 def get_stock():
     return input("Which stock are you interested in? \
@@ -25,36 +34,38 @@ def evaluate(s):
     #     case 'msft':
     #         return msft, 'Microsoft'
     if s == 'amzn':
-        return amazon, 'Amazon'
+        return amazon
     elif s == 'appl':
-        return apple, 'Apple'
+        return apple
     elif s == 'fb':
-        return fb, 'Facebook'
+        return fb
     elif s == 'goog':
-        return google, 'Google'
+        return google
     elif s == 'msft':
-        return msft, 'Microsoft'
+        return msft
     else:
         s = get_stock()
+def get_stock_name(amt):
+    if amt == amazon:
+        return 'Amazon'
+    elif amt == apple:
+        return 'Apple'
+    elif amt == fb:
+        return 'Facebook'
+    elif amt == google:
+        return 'Google'
+    elif amt == msft:
+        return 'Microsoft'
+
+
 def stock_purchase(sa, us):
     if int(us / sa):
         return 0
-    else:
-        return 1
+    return 1
 
-# Creating variables to store the current (approximate) market price of these 5 companies - Amazon, Apple, Facebook, Google and Microsoft.
+print("Challenge 3.2: Playing with the stock market")
 
-amazon = 3000
-apple = 100
-fb = 250
-google = 1400
-msft = 200
-
-stock_amt = 0
-stock = 0
-s_name = ''
-u_name = ""
-u_stock = ""
+print()
 
 print("Challenge 3.2.1: Taking user input")
 # Write code to ask the client his name and save it to a variable..
@@ -79,13 +90,13 @@ assert(u_savings > 0)
 
 # More concise way
 
-stock, s_name = evaluate(u_stock)
+stock = evaluate(u_stock)
 while not stock:
-    stock, s_name = evaluate(get_stock())
-
+    stock = evaluate(get_stock())
+s_name = get_stock_name(stock)
 while stock_purchase(stock, u_savings):
     print(f"I'm sorry, {u_name}, you don't have enough to purchase that stock.  Please choose another.")
-    stock, s_name = evaluate(get_stock())
+    stock = evaluate(get_stock())
 
 '''
 Your code should look like this:
