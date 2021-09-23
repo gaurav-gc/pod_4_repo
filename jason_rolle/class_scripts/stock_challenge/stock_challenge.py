@@ -32,8 +32,10 @@ elif stock =="fb":
     print(f"{clients_name} has {clients_saving} in savings and he can buy {int(clients_saving/fb)} shares of facebook at the current price of {fb}. ")
 elif stock =="goog":
     print(f"{clients_name} has {clients_saving} in savings and he can buy {int(clients_saving/google)} shares of google at the current price of {google}. ")
-else:
+elif stock =="msft":
     print(f"{clients_name} has {clients_saving} in savings and he can buy {int(clients_saving/msft)} shares of microsoft at the current price of {msft}. ")    
+else :
+    print(" There are no stocks here")
 
 '''
 Your code should look like this:
