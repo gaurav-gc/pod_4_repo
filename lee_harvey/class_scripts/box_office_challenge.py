@@ -48,4 +48,5 @@ print(top_100[0:10])
 # Note: Print your new variable to see the string version of the movies
 print()
 top_100_str = str.join("\n", top_100)
+# top_100_str = ('\n').join(top_100)  Another way
 print(top_100_str)
