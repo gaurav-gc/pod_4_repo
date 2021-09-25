@@ -15,7 +15,8 @@ print("Challenge 3.2.1: Taking user input")
 name = input("What is your name?")
 
 # TODO: Write code to ask the client his savings and save it to another variable.
-savings = int(input("Enter the amount in your savings account (as an integer)? "))
+savings = int(
+    input("Enter the amount in your savings account (as an integer)? "))
 
 # TODO: Write code to ask the client the stock he is interested in and save it to another variable, as shown below.
 stock = input("Which stock are you interested in? Type 'amzn' for Amazon, 'appl' for Apple, 'fb' for Facebook, 'goog' for Google and 'msft' for Microsoft.")
@@ -33,27 +34,27 @@ elif ...
 else ...
 '''
 if stock == "amzn":
-  totals = savings // amazon
-  company = "Amazon"
-  share_price = 3000
+    totals = savings // amazon
+    company = "Amazon"
+    share_price = 3000
 elif stock == "appl":
-  totals = savings // apple
-  company = "Apple"
-  share_price = 100
+    totals = savings // apple
+    company = "Apple"
+    share_price = 100
 elif stock == "fb":
-  totals = savings // fb
-  company = "Facebook"
-  share_price = 250
+    totals = savings // fb
+    company = "Facebook"
+    share_price = 250
 elif stock == "goog":
-  totals = savings // google
-  company = "Google"
-  share_price = 1400
+    totals = savings // google
+    company = "Google"
+    share_price = 1400
 elif stock == "msft":
-  totals = savings // msft
-  company = "Microsoft"
-  share_price = 200
+    totals = savings // msft
+    company = "Microsoft"
+    share_price = 200
 else:
-  company = "unknown"  
+    company = "unknown"
 
 
 print()
@@ -61,11 +62,10 @@ print()
 print("Challenge 3.2.3: Output for the user the result")
 # TODO: COnce you have calculated the number of stocks that can be purchased, print the result for the client. Result should be in a format like this:
 if company == "unknown":
-  print(f'Sorry, {name}, {stock} is invalid')
+    print(f'Sorry, {name}, {stock} is invalid')
 else:
 
-# Alex has $5000 in savings and he can buy 50 shares of Apple at the current price of $100.
+    # Alex has $5000 in savings and he can buy 50 shares of Apple at the current price of $100.
     print(f'{name} has ${savings} in savings and can purchase {totals} of {company} at {share_price}')
 
 print()
-
