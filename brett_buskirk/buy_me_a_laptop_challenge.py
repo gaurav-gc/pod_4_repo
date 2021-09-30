@@ -106,4 +106,5 @@ print("Time to look at the range of prices. Using a nested loops, print out all 
 # TODO: print out all possible prices for the laptops
 for laptop in laptops:
   for laptop_type in laptop['types']:
-    print(laptop_type['price'])
+    laptop_name = laptop['productName'] + " " + laptop_type['screen_size']
+    print(f"{laptop_name} {laptop_type['price']}")
