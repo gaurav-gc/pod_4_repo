@@ -1,38 +1,105 @@
-# You run a startup media company called Ripple Media
-# It's typical when you hire a new employee in your company, to setup an email id for them
+# Challenge 1
+# print("Challenge 1: All possible laptops\n")
 
-print('Question 1')
-employee_name = 'Ash Rahman'
+# print("Question 1: You are given a list containing the laptop names. Print the names of each the laptops separately.")
+# all_laptops = ["Apple MacBook Pro", "Asus Zenbook", "Dell XPS", "Lenovo IdeaPad", "Apple MacBook Air", "Sony Viao"]
 
-# You have decided the format of the email should be: Ash Rahman -> ash.rahman@ripplemedia.com
-# Let's write some code that converts a name into an email id that matches this format
-# 1.1 TODO: Let's save the lowercase version of the employee_name in a new variable 'lower_name'
-lower_name = employee_name.lower()
-# 1.2 TODO: We want to separate the first name and last name and save it in a variable 'names_list'
-names_list = lower_name.split(" ")
-# 1.3 TODO: We want to join the first name and last name with a '.' and save it in a variable called 'joined_names'
-joined_names = ".".join(names_list)
-# 1.4 TODO: We want to add '@ripplemedia.com' to the end of the string inside joined_names and save it in a variable 'email'
-email = joined_names + '@ripplemedia.com'
-print(email)
+# # TODO: Write code to print all laptop names
+# print("All laptops names:")
+# for laptops in all_laptops:
+#     print(laptops)
 
-print('Question 2')
+# # Challenge 2
 
-# Congratulations! Your team is expanding. Below is a list of their names:
-names = ['Max Bartlett', 'Angelita Norris', 'Stewart Mueller', 'Dominique Henry', 'Carmela Gross', 'Bettie Mcmillan', 'Sara Ellison', 'Ira Anthony', 'Pauline Riley', 'Ben Weber',
-         'Joanne Mcknight', 'Loren Gould', 'Jamar Singh', 'Amanda Vance', 'Tyrell Andrade', 'Jana Clements', 'Eddy Mcbride', 'Marsha Meyer', 'Elbert Shannon', 'Alyce Hull']
+print("Challenge 2: Buy a laptop")
+# print("Below is a dictionary of the top 2 laptops of 2020 as reviewed by Tech Crunch. \
+#     Go through the dictionary and print out the following 3 pieces of information about the laptops: \
+#     \n1. The url for the Apple Macbook Pro \
+#     \n2. All possible prices of the 16-inch MacBook Pro. \
+#     \n3. All the color options for Dell XPS 13. \
+#     \n4. The description of Dell XPS.")
 
-emails = []
+laptops = [
+    {
+        "productName": "Apple Macbook Pro",
+        "url": "https://www.apple.com/macbook-pro-13/",
+        "types": [
+            {
+                "id": "1",
+                "screen_size": "13-inch",
+                "cpu": ["1.4GHz quad-core 8th-generation Intel Core i5 processor", "2.0GHz quad-core 10th-generation Intel Core i5 processor"],
+                "ram": ["8GB", "16GB"],
+                "storage": ["256GB SSD", "512 GB SSD"],
+                "colors": ["space gray", "silver"],
+                "price": [1299, 1499, 1799]
+            },
+            {
+                "id": "2",
+                "screen_size": "16-inch",
+                "cpu": ["2.6GHz 6-core 9th-generation Intel Core i7 processor", "2.3GHz 8-core 9th-generation Intel Core i9 processor"],
+                "ram": ["16GB"],
+                "storage": ["512 GB SSD", "1 TB SSD"],
+                "colors": ["space gray", "silver"],
+                "price": [2399, 2799]
+            }
+        ],
+        "description": "If you're after the latest and greatest laptop from Apple, we suggest you look into the 2020 model of the MacBook Pro. The headline Touch Bar – a thin OLED display at the top of the keyboard which can be used for any number of things, whether that be auto-suggesting words as you type or offering Touch ID so you can log in with just your fingerprint – is of course included. It's certainly retained Apple's sense of style, but it comes at a cost. This is a pricey machine, so you may want to consider one of the Windows alternatives. But, if you're a steadfast Apple diehard, this is definitely the best laptop for you!"
+    },
+    {
+        "id": "2",
+        "productName": "Dell XPS",
+        "url": "https://www.dell.com/en-us/shop/dell-laptops/sr/laptops/xps-laptops?~ck=bt",
+        "types": [
+            {
+                "id": "3",
+                "screen_size": "13-inch",
+                "cpu": ["11th Generation Intel Core i3-1115G4 Processor", "11th Generation Intel Core i5-1135G7 Processor"],
+                "ram": ["8GB"],
+                "storage": ["256GB SSD", "512 GB SSD", "1 TB SSD"],
+                "colors": ["Platinum silver exterior, black interior", "Platinum silver exterior, black interior"],
+                "price": [999, 1099, 1149, 1249]
+            },
+            {
+                "id": "4",
+                "screen_size": "15-inch",
+                "cpu": ["10th Generation Intel Core i5-10300H"],
+                "ram": ["8GB", "16GB", "32GB", "64GB"],
+                "storage": ["256 GB SSD", "512 GB SSD", "1 TB SSD", "2 TB SSD"],
+                "colors": ["Frost White with White Palmrest", "Frost White with White Palmrest"],
+                "price": [1199, 1299, 1399, 1749, 1999, 2299]
+            }
+        ],
+        "description": "The Dell XPS is an absolutely brilliant laptop. The 2020  version rocks an 11th-generation Intel Core i3, i5 or i7 processor and a bezel-less ‘Infinity Edge’ display. This Dell XPS continues to be the most popular Windows laptop in the world. What’s more, there’s a wide range of customization options, so you can really make the Dell XPS the best laptop for your needs. "
+    }
+]
 
-# We want to convert all their names into the same format from Question 1
-# 2.1 TODO: Use a "for" loop to go over each name in the names list
-# 2.2 TODO: Inside the "for" loop, create the email id by re-using the logic from Question 1 and...
-# 2.3 TODO: ..add the email to the emails list
-for name in names:
-    lower_name = name.lower()
-    names_list = lower_name.split(" ")
-    joined_names = ".".join(names_list)
-    email = joined_names + '@ripplemedia.com'
-    emails.append(email)
+print('\Write code to print out the MacBook Pro url ')
+print(f'Macbook URL: {laptops[0]["url"]}')
 
-print(emails)
+
+# # TODO: Write code to print all possible prices of the 16-inch MacBook Pro.
+print(
+    f'All possible prices of 16-inch Macbook Pro: {laptops[0]["types"][1]["price"]}')
+# # TODO: Write code to print all the color options for Dell XPS 13.
+print(f'All color options for Dell XPS 13: {laptops[1]["types"][0]["colors"]}')
+# # TODO: Write code to print the description of Dell XPS laptop.
+print(f'Description of Dell XPS laptop: {laptops[1]["description"]}')
+
+print("Question 2: Out of Stock laptops")
+print("Suppose that the 13-inch MacBook Pro in space gray color is sold out. Also, the same laptop with 1 TB storage is out of stock as well. Update the list of dictionaries such that these options are removed. Print the updated dictionary.")
+
+# # TODO: Update the laptops dictionary.
+laptops[0]["types"][0]["colors"] = ["silver"]
+laptops[0]["types"][0]["storage"] = [["256GB SSD", "512 GB SSD"]]
+# # TODO: Print the new dictionary.
+# print(laptops)
+
+print("Question 3: listing all the prices")
+# print("Time to look at the range of prices. Using a nested loops, print out all possible computer prices")
+
+# # TODO: print out all possible prices for the laptops
+
+for laptop in laptops:
+    for typess in laptop["types"]:
+        for prices in typess["price"]:
+            print(prices)

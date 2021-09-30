@@ -99,6 +99,12 @@ print("Question 3: listing all the prices")
 # # TODO: print out all possible prices for the laptops
 
 for laptop in laptops:
+<<<<<<< HEAD:diana_delos_reyes/nested_data.py
     for typess in laptop["types"]:
         for prices in typess["price"]:
             print(prices)
+=======
+  for laptop_type in laptop['types']:
+    laptop_name = laptop['productName'] + " " + laptop_type['screen_size']
+    print(f"{laptop_name} {laptop_type['price']}")
+>>>>>>> 7dd4aea... Added to Buy Me A Laptop challenge and completed Email IDs Challenge:brett_buskirk/buy_me_a_laptop_challenge.py

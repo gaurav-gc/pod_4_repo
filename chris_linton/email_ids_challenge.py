@@ -45,7 +45,7 @@ emails = []
 # We want to convert all their names into the same format from Question 1
 # 2.1 TODO: Use a "for" loop to go over each name in the names list
 for user_name in names:
-# 2.2 TODO: Inside the "for" loop, create the email id by re-using the logic from Question 1 and...
+    # 2.2 TODO: Inside the "for" loop, create the email id by re-using the logic from Question 1 and...
     # create a string variable for the employee name after making it lower case
     lower_name = user_name.lower()
     # create a list variable for the emloyee name after splitting it into a list of strings
@@ -54,7 +54,7 @@ for user_name in names:
     joined_names = '.'.join(names_list)
     # create a variable created by joining '@ripplemedia.com' to the end of joined_name
     email = joined_names + '@ripplemedia.com'
-# 2.3 TODO: ..add the email to the emails 
+# 2.3 TODO: ..add the email to the emails
     # add new employee email address to emails list
     emails.append(email)
 # print the list of employee email addresses
