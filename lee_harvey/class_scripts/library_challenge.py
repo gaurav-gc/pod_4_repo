@@ -11,13 +11,13 @@ print(f"1.0 The variable 'books' is a list defined both by the funtion 'type' {t
 # Create a function 'available_books' to print the books list
 # Parameters: Not needed for this function
 # Return: Not needed for this function
-def available_books():
-    for book in books:
-        print(book, end='\n')
+def available_books(bks):
+    for bk in bks:
+        print(bk)
 # 1.2
 # Run the 'available_books' function
 print("1.2")
-available_books()
+available_books(books)
 # 1.3
 # Create a function 'check_out' that removes a book from the books list
 # Parameters: book (string)
