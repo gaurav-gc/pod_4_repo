@@ -157,7 +157,7 @@ books_with_details = [
 ]
 # 2.0
 # Describe the structure of the data in books_with_details. What types of data are nested within others? How do you know?
-print("nbooks_with_details is a list of dictionaries.  The square brackets indicate it is a list.  The curly brackets inside each index indicates that  the value is a dictionary.  The key : value of each item within the curly brackets also indicate this is a dictionary.\n")
+print("\nbooks_with_details is a list of dictionaries.  The square brackets indicate it is a list.  The curly brackets inside each index indicates that  the value is a dictionary.  The key : value of each item within the curly brackets also indicate this is a dictionary.\n")
 # 2.1
 # Create a function 'count_books' that returns the number of books in the books_with_details list
 # Parameters: Not needed for this function
