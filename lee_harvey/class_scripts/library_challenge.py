@@ -162,17 +162,13 @@ print("\nbooks_with_details is a list of dictionaries.  The square brackets indi
 # Create a function 'count_books' that returns the number of books in the books_with_details list
 # Parameters: Not needed for this function
 # Return: number of books (integer)
-def count_books():
-    amt = 0
-    for book in books_with_details:
-        book['title']
-        amt += 1
-    return amt
+def count_books(lst):
+    return len(lst)
 
 # 2.2
 # Check the number of books available in the books list using the count_books function
 print("2.2")
-print(count_books())
+print(count_books(books_with_details))
 print()
 # 2.3
 # Create a function 'search_by_author' that returns the titles of books by an author
