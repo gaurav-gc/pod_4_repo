@@ -1,3 +1,5 @@
+import numpy as np
+import os
 # Music playlist challenge!
 # In this challenge, you'll have to both work on this script, and the accompanying script playlist_functions.py
 # All of your functions should be in the other script (playlist_functions.py)
@@ -60,7 +62,8 @@ get_playlist_length()
 print('Question 8')
 monthly_plays = [127030, 274920, 232453, 98278, 500301, 235462]
 
-
+avg = np.mean(monthly_plays)
+print(avg)
 # BONUS In playlist_functions.py, define a new function called play_track()
 # See playlist_functions.py for details on how to define this function
 # Then play a few tracks, and run display_playlist() again to make sure it works

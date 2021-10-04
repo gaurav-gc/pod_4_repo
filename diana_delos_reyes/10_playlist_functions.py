@@ -24,8 +24,8 @@ TODO (Question 6): define a function called get_playlist_length()
 This function should have one parameter called 'playlist'
 The function should return an integer value indicating how many songs there are
 '''
-def get_playlist_length():
-    print(len(my_playlist))
+def get_playlist_length(playlist):
+    print(int(playlist))
 
 
 

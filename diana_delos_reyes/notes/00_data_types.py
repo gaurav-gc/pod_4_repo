@@ -44,32 +44,6 @@
     str(variable, object, etc) - take a float or an integer and turn it into a string. 
     type(object) // type(name, bases, dict,variable) - will tell you its data type
 
-
-######################################
-######################################
-######## FOR / WHILE LOOPS ###########
-######################################
-######################################
-While Loop - keep looping while a condition is true
-        EXAMPLE: 
-      	while number <= 100 print(‘hello’)
-      	    -This would be an example of what is called indefinite iteration, 
-               meaning we don't know how many times we'll need to perform the loop body. 
-
-For Loop - allows us to repeat a task a specific number of times, and to use different data (such as a different name) each time we repeat.
-        EXAMPLE: 
-          	coworker_names = ["Mike", "Jessica", "Sheila", "Anton", "Kim"] 
-       		for name in coworker_names:     
-      	    print("Good morning, " + name + "!")
-
-          -The first line of the loop specifies a list of names.
-          -The code within the loop will execute once for each item in the list, with the value of the name 
-              variable being updated to have the value of each item in the list, in turn. 
-          -If there are 10 items in the list, the loops repeats 10 times.
-          -The variable name can be given any other name that we like.
-
-This is called definite iteration - have a definite (fixed, defined) number of times that we will perform the loop body.
-
 ######################################
 ######################################
 ############ MATHEMATICS #############

@@ -144,7 +144,7 @@ print(type(books_with_details))
 print(type(books_with_details[0]))
 #dictionary
 print(type(books_with_details[0]["title"]))
-string
+#string
 
 
 
