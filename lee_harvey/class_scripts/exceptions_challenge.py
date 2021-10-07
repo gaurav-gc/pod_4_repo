@@ -30,13 +30,13 @@ print('Question 3')
 
 
 def repeat(str, times):
-    return len(str) * times
+    return str * times
 
 
 print(repeat('python', 3))
 print(repeat('[]', 3))
 print(repeat('//', 3))
-print(repeat({}, 5))
+print(repeat('{}', 5))
 print(repeat('{[', 3))
 
 print('')
