@@ -158,9 +158,12 @@ books_with_details = [
 # Describe the structure of the data in books_with_details. What types of data are nested within others? How do you know?
 # It is a list containing dictionaries, as proven by:
 print()
+
 print(type(books_with_details))
 print(type(books_with_details[0]))
 print(type(books_with_details[0]['title']))
+=======
+print(type(books_with_details[0]))
 
 # 2.1
 # Create a function 'count_books' that returns the number of books in the books_with_details list
