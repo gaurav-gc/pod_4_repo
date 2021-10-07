@@ -30,22 +30,17 @@ restaurant = {
     "transactions": ["pickup", "delivery"]
 }
 
+print(restaurant)
 
 # TODO: Write code to print the latitude and longitude of Four Barrel Coffee.
+print(restaurant['latitude'], "&", restaurant['longitude']) 
 # TODO: Write code to print the complete address of the Four Barrel Coffee, formatted as a string - it should include the address, city, state and the zip code.
+print(restaurant['address1'], restaurant['city'], restaurant['state'], restaurant['zip_code'])
 # TODO: Write code to print the URL of the website of Four Barrel Coffee.
-
-print(f'Latitude of Four Barrel Coffee: {restaurant["latitude"]}\nLongitude of Four Barrel Coffee: {restaurant["longitude"]}')
-
-print(f'The complete address of Four Barrel Coffee is {restaurant["address1"]}, {restaurant["city"]}, {restaurant["state"]} {restaurant["country"]} {restaurant["zip_code"]}')
-
-print(f'Website of Four Barrel Coffee: {restaurant["url"]}')
+print(restaurant['url'])
 
 
 print()
-
-
-
 
 print("Question 2")
 
@@ -53,6 +48,10 @@ print("Question 2")
 #         1. name : name of the resturant (string)
 #         2. address: address of the restaurant (string)
 #         3. favourite_dish: your favourite thing to order at the restaurant (string)
+fav_restaurants = {'Pig_Butter': ['134 Ludlow St, New York, NY 10002', 'Fried Chicken_Waffles', 'HOURS: WED-THURS 9:30AM-5PM. FRI-SAT-9:30AM-6PM. SUN-9:30AM-6PM'], 
+'Blackbarn Restaurant': ['19 E 26th st, New York, NY 10010', 'BBQ Beef Ribs', '11am-9pm'], 
+'Minetta Tavern': ['113 Macdougal St, New York, NY 10012', 'Black Angus Dry aged Tomahauk', '12pm-11p']}
+print(fav_restaurants)
 
 # TODO: Print each dictionary
 
@@ -65,31 +64,7 @@ restaurant_1  = {
     "favourite_dish" : "Chicken BLT Sandwich" }
 '''
 
-restaurant_1  = {
-    "name": "Subway",
-    "address" : "116th & Broadway, NY 10016",
-    "favourite_dish" : "Chicken BLT Sandwich"
-    }
-
-restaurant_2 = {
-    "name": "Pisticci",
-    "address" : "125 La Salle St, New York, NY 10027",
-    "favourite_dish" : "Ravioli"
-    }
-
-
-restaurant_3  = {
-    "name": "Awadh",
-    "address" : "2588 Broadway, New York, NY 10025",
-    "favourite_dish" : "Paneer Tikka Masala"}
-
-
-print(restaurant_1)
-print(restaurant_2)
-print(restaurant_3)
-
-
-
+print()
 
 print("Question 3")
 '''
@@ -99,11 +74,10 @@ Remove the 'favourite_dish' key value pair from that restaurant's dictionary
 
 # TODO: Remove the 'favourite_dish' key-value pair from one of your 3 restaurants
 
-restaurant_1.pop('favourite_dish')
 
 # TODO: Print the new dictionary. The new dictionary should only contain 'name' and 'address' for that restaurant
 
-print(restaurant_1)
+print()
 
 print("Question 4")
 '''
@@ -112,14 +86,11 @@ Update just this value in that restaurant's dictionary
 '''
 
 # TODO: Update the address field of 1 restaurant 
-
-restaurant_3['address'] = '101 Amsterdam Avenue, New York, NY, 10029'
-
 # TODO: Print the new address of the restaurant by accessing that field of the restaurant's dictionary
-
-print(restaurant_3['address'])
-
 # TODO: Print the updated dictionary.
+old_address = fav_restaurants['Minetta Tavern'] 
+fav_restaurants['Minetta Tavern'] = '118 Macdougal St, New York, NY 10012'
+new_address = fav_restaurants['Minetta Tavern']
+print(new_address)
 
-print(restaurant_3)
-
+print()

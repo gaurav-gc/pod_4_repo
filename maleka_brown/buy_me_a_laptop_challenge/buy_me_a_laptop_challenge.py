@@ -1,20 +1,16 @@
 # Challenge 1
-print("Challenge 1: All possible laptops")
-
+print("Challenge 1: All possible laptops\n")
 
 print("Question 1: You are given a list containing the laptop names. Print the names of each the laptops separately.")
-
-
 all_laptops = ["Apple MacBook Pro", "Asus Zenbook", "Dell XPS", "Lenovo IdeaPad", "Apple MacBook Air", "Sony Viao"]
+a = [all_laptops]
+  
+print(*a, sep = ", ") 
+  
 
 
-print("All laptops IDs:")
 # TODO: Write code to print all laptop names
-
-for laptop_id in all_laptops:
-    print(laptop_id)
-
-print("All laptops names:")
+print("all_laptops:")
 
 
 # Challenge 2
@@ -26,7 +22,6 @@ print("Below is a dictionary of the top 2 laptops of 2020 as reviewed by Tech Cr
     \n2. All possible prices of the 16-inch MacBook Pro. \
     \n3. All the color options for Dell XPS 13. \
     \n4. The description of Dell XPS.")
-
 
 laptops = [
         {
@@ -82,47 +77,22 @@ laptops = [
         }
 ]
 
-
 # TODO: Write code to print out the MacBook Pro url 
-print(f'URL for the Apple Macbook Pro: {laptops[0]["url"]}')
 
-
-# TODO: Write code to print all possible prices of the 16-inch MacBook Pro. 
-print(f'All possible prices of the 16-inch MacBook Pro: {laptops[0]["types"][1]["price"]}')
+# TODO: Write code to print all possible prices of the 16-inch MacBook Pro.
 
 # TODO: Write code to print all the color options for Dell XPS 13.
-print(f'All color options for Dell XPS 13 inch: {laptops[1]["types"][0]["colors"]}')
 
 # TODO: Write code to print the description of Dell XPS laptop.
-print(f'Description of Dell XPS laptop: {laptops[1]["description"]}')
 
 
 print("Question 2: Out of Stock laptops")
-print("Suppose that the 13-inch MacBook Pro in space gray color is sold out. Also, the same laptop with 256 GB storage is out of stock as well. Update the list of dictionaries such that these options are removed. Print the updated dictionary.")
+print("Suppose that the 13-inch MacBook Pro in space gray color is sold out. Also, the same laptop with 1 TB storage is out of stock as well. Update the list of dictionaries such that these options are removed. Print the updated dictionary.")
 
 # TODO: Update the laptops dictionary.
 # TODO: Print the new dictionary.
-laptops[0]["types"][0]["colors"] = ["silver"]
-laptops[0]["types"][0]["storage"] = ["512 GB"]
-
-print(laptops)
-
 
 print("Question 3: listing all the prices")
-print("Time to look at the range of prices. Using a nested loops, print out all possible computer prices")
+print("Time to look at the range of prices. Print out all possible computer prices")
+
 # TODO: print out all possible prices for the laptops
-
-# One solution: nested for loop to print out lists of prices
-for product in laptops:
-    for product_type in product['types']:
-            print(product_type['price'])
-
-
-# Another solution: triple nested for loop
-for product in laptops:
-    for product_type in product['types']:
-        for price in product_type['price']:
-            print(price)
-
-
-
