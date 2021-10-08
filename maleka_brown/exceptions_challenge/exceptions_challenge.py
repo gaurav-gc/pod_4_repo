@@ -1,13 +1,5 @@
 # print('Question 1')
-# # TODO: Fix error(s) so that the if/else blocks runs without issues
-# a = 1
-# b = 2
-# if a < b:
-#     print(f'{a} is less than {b}')
-# else:
-#     print(f'{a} is greater than {b}')
 
-# print('')
 a = 1
 b = 2
 if a < b:
