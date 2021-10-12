@@ -18,12 +18,12 @@ from book_class import *
 # '''
 
 
-class Booklist():
-    print('PART 1\n')
-    my_library = Booklist()
-    print(my_library.books)
+# class Booklist():
+print('PART 1\n')
+my_library = Booklist()
+print(my_library.books)
     #OUTPUT: []
-    print(my_library)
+print(my_library)
     #OUTPUT <book_class.Booklist object at 0x1066462c0>
 # '''
 # Part #2: 

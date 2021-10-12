@@ -14,7 +14,9 @@ class Booklist():
 				if(book['title']) == title:
 					self.books.remove(book)
 	def display_titles(self):
-		# for book in self.books:
+		sort_books = sorted(self.books, key=lambda item: item['title'])
+		for book in sort_books:
+			print(book['title'])
 		# 	new_book_list = sorted(book['title'])
 		# 	return new_book_list
 		# 	print(new_book_list)
