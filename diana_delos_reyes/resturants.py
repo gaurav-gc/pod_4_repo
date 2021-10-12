@@ -90,7 +90,7 @@ print()
 
 print("Question 3")
 # '''
-# Imagine that any 1 of your most favourite restaurants stopped serving your favourite dish there.
+# Imagine that any 1 of your most favourite restaurants stopped serving your favourite dish there. 
 # Remove the 'favourite_dish' key value pair from that restaurant's dictionary
 # '''
 
@@ -106,14 +106,15 @@ print()
 
 print("Question 4")
 # '''
-# Imagine that another one of your most favourite restaurants modified its address.
+# Imagine that another one of your most favourite restaurants modified its address. 
 # Update just this value in that restaurant's dictionary
 # '''
 
 print('Update the address field of 1 restaurant')
 print('Print the new address of the restaurant')
 print('Print the updated dictionary.')
-restaurant1["address"] = '1234 beach avenue'
+restaurant1["address"]= '1234 beach avenue'
 new_address = restaurant1.get("address")
 print(new_address)
 print(restaurant1)
+# print()

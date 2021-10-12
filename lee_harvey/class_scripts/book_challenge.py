@@ -1,15 +1,15 @@
 '''
 Object-oriented book challenge! 
 
-Your challenge for today is to complete the fill out the missing parts of the Booklist class in oop_book_challenge.py
+Your challenge for today is to complete the fill out the missing parts of the Booklist class in book_class.py
 Then, test each method for the class Booklist!
 
-Hint: all methods for the Booklist class go in the oop_book_challenge.py script
-This class and the methods are already imported in this script -- test them here!
+Hint: all methods for the Booklist class go in the book_class.py script
+This class and the methods are already imported in this script -- test them here for specific cases!
 '''
 
 # import the Booklist class and corresponding methods
-from book_class_solution import *
+from book_class import *
 
 
 '''
@@ -21,17 +21,16 @@ No parameters needed, other than self
 Then, create an object of class Booklist called 'my_library' in this script.
 Finally, print the books attribute of my_library -- it should be an empty list
 Also, print out the type of my_library to see what you get :) 
-
 '''
 print('PART 1\n')
-
 my_library = Booklist()
 print(my_library.books)
 print(type(my_library))
 
+
 '''
 Part #2: 
-Define the add() method to add a book to your Booklist
+Define the add() method to add a book to an object of class Booklist
 -The method should take 2 parameters other than self, both strings -- 'title', and 'author'
 -The method should make a book variable as a dictionary with two key/value pairs for title/author
 -Then, the method should append this book to books attribute of the the Booklist object  - i.e. self.books.append(book)
@@ -42,41 +41,31 @@ The New Jim Crow - Michelle Alexander
 The Truths We Hold - Kamala Harris
 My Grandmother's Hands - Resmaa Menakem
 
-Finally, print the books attribute of my_library to make sure your books have been added!
+Finally, prinb the books attribute of my_library to make sure your books have been added!
 '''
 print('\nPart 2\n')
-
-# add the books
-my_library.add(title = 'Just Mercy', author = 'Bryan Stevenson')
-my_library.add(title = 'The New Jim Crow', author = 'Michelle Alexander')
-my_library.add(title = 'The Truths We Hold', author = 'Kamala Harris')
-my_library.add(title = "My Grandmother's Hands", author = 'Resmaa Menakem')
-
-# print out the books
+my_library.add('Just Mercy', 'Bryan Stevenson')
+my_library.add('The New Jim Crow', 'Michelle Alexander')
+my_library.add('The Truths We Hold', 'Kamala Harris')
+my_library.add('My Grandmother\'s Hands', 'Resmaa Menaken')
 print(my_library.books)
-
 
 
 '''
 Part #3: 
-Define the count_books() method to get the number of books in your Booklist
+Define the count_books() method to get the number of books in an object of class Booklist
 -the method only needs the self parameter
 -the method should return an integer that is the length of the list stored in the books attribute
 
 Once you have finished the method, count the books in my_library and print out the result
 '''
 print('\nPart 3\n')
-
-# count the books
-num_books = my_library.count_books()
-
-# print the result
-print(num_books)
+print(my_library.count_books())
 
 
 '''
 Part #4: 
-Define the remove_title() method which will remove a book by its title from a Booklist
+Define the remove_title() method which will remove a book by its title from an object of class Booklist
 -the method should take the self parameter, plus an additional paramter 'title' (a string for the title of the book to remove)
 -the method should remove any books matching the input title from the Booklist
 -it does not need to return anything
@@ -89,10 +78,9 @@ print('\nPart 4\n')
 my_library.remove_title('Just Mercy')
 print(my_library.books)
 
-
 '''
 Part #5:
-Instantiate another Booklist class called nyt_bestsellers
+Instantiate another object of class Booklist called nyt_bestsellers
 Then, add 2 books of your choice from the New York Times best sellers lists to nyt_bestsellers using the .add() method
 You can find NYT books here: https://www.nytimes.com/books/best-sellers/
 
@@ -100,21 +88,16 @@ Then, print out the books attribute of nyt_bestsellers
 '''
 
 print('\nPart 5\n')
-
-# initialize new Booklist object
 nyt_bestsellers = Booklist()
-
-# add books
-nyt_bestsellers.add('A time for mercy', 'John Grisham')
-nyt_bestsellers.add('The return', 'Nicholas Sparks')
-
-# print out
+nyt_bestsellers.add('Cloud Cuckoo Land', 'Anthony Doerr')
+nyt_bestsellers.add('The Last Graduate', 'Naomi Novik')
 print(nyt_bestsellers.books)
+
 
 
 '''
 BONUS Part #6:
-Define a display_titles() method to display all the titles of the books in a Booklist
+Define a display_titles() method to display all the titles of the books in an object of class Booklist
 The titles should be displayed in alphabetical order!
 -The method requires no parameters other than self
 
@@ -124,7 +107,6 @@ Once you have completed this method, test it out on both my_library and nyt_best
 '''
 
 print('\nBONUS Part 6\n')
-
-# display titles for both
 my_library.display_titles()
+print()
 nyt_bestsellers.display_titles()
