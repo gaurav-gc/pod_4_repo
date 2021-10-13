@@ -77,7 +77,7 @@ class BusStation(Station):
         self.open = False
 
     def show_info(self):
-        print(f'{self.station_name} station is located at {self.location}')
+        super().show_info()
         open = 'Open' if self.open else 'Closed'
         print(f"The {self.station_name} station is {open}")
 
