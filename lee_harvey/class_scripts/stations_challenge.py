@@ -46,7 +46,7 @@ station_name: '14th street'
 location: '14th street and 7th avenue'
 lines: ['1', '2', '3', 'L']
 '''
-subway_station = SubwayStation('14th street', '14th street and 7th avenue', ['1', '2', '3', 'L'])
+subway_station = SubwayStation(station_name='14th street',location='14th street and 7th avenue', lines=['1', '2', '3', 'L'])
 subway_station.show_info()
 
 
