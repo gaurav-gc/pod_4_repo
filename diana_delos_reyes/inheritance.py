@@ -44,20 +44,22 @@ print('')
 print('')
 print('Question 3: Making the BusStation Class')
 class BusStation(Station):
-    def __init__(self, station_name, location, routes, open):
+    def __init__(self, station_name, location, routes):
         super().__init__(station_name, location)
         self.routes = routes
-        self.open = True #or open?
+        self.open = True
     
     def show_info(self):
-        print(f' routes of this station is = {self.routes} \n this bustation is {self.open}\n the station name is {self.station_name}, and location {self.location}')
+        if self.open:
+            print(f' routes of this station is = {self.routes} \n this bustation is {self.open}\n the station name is {self.station_name}, and its location: {self.location}')
+        else:
+            print('station in closed!')
 
     def open_station(self):
         self.open = True
-        print(f'bus station is {self.open}')
+
     def close_station(self):
-        self.open = False
-        print(f'bus station is {self.open}')   
+        self.open = False  
 '''
 Using the Station class below as the parent, make a child class called BusStation
 ​
@@ -78,7 +80,7 @@ station_name: 'NYC Megabus Stop'
 location: '34th street and 12th avenue'
 lines: ['Boston', 'DC', 'Philly']
 '''
-bus = BusStation(station_name="NYC Megabus Stop", location="34th street and 12th avenue", routes=['Boston', 'DC', 'Philly'], open=True)
+bus = BusStation(station_name="NYC Megabus Stop", location="34th street and 12th avenue", routes=['Boston', 'DC', 'Philly'])
 bus.open_station()
 bus.close_station()
 bus.show_info()
