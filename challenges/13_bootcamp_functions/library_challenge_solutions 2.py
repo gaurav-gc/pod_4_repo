@@ -5,28 +5,31 @@ books = ['MY OWN WORDS', 'WHITE FRAGILITY', 'THE BODY KEEPS THE SCORE', 'SO YOU 
 
 # 1.0
 # What data type is the object 'books'? How do you know?
-# It's a list as proven by: 
-print()
+
 print(type(books))
 
 # 1.1
 # Create a function 'available_books' to print the books list
 # Parameters: Not needed for this function
 # Return: Not needed for this function
+
+
 def available_books():
-  print(books)
+    print(books)
+
 
 # 1.2
 # Run the 'available_books' function
-print()
 available_books()
 
 # 1.3
 # Create a function 'check_out' that removes a book from the books list
 # Parameters: book (string)
 # Return: Not needed for this function
+
+
 def check_out(book):
-  books.remove(book)
+    books.remove(book)
 
 
 # 1.4
@@ -34,38 +37,39 @@ def check_out(book):
 check_out('SAPIENS')
 
 # Bonus: Run available_books function again to see if the book was checked out
-print()
 available_books()
 
 # 1.5
 # Create a function 'check_in' that adds a book to the books list
 # Parameters: book (string)
 # Return: Not needed for this function
+
+
 def check_in(book):
-  books.append(book)
+    books.append(book)
+
 
 # 1.6
 # Check in 'SAPIENS' using the check_in function
 check_in('SAPIENS')
 
 # Bonus: Run available_books function to see if the book was checked in
-print()
-available_books()
 
 # 1.7
 # Create a function 'search_by_name' that prints 'Available' if exists in books list, 'Not Available' if it doesn't.
 # Parameters: book (string)
 # Return: Not needed for this function
+
+
 def search_by_name(book):
-  book = book.upper()
-  if book in books:
-    print("Available")
-  else:
-    print("Not Available")
+    if book in books:
+        print('Available')
+    else:
+        print('Not Available')
+
 
 # 1.8
 # Search for the book 'JUST MERCY'
-print()
 search_by_name('JUST MERCY')
 
 print()
@@ -154,27 +158,34 @@ books_with_details = [
         'description': 'Snyder explores Russian attempts to influence Western democracies and the influence of philosopher Ivan Ilyin on Russian President Vladimir Putin and the Russian Federation in general.'
     }
 ]
+
 # 2.0
 # Describe the structure of the data in books_with_details. What types of data are nested within others? How do you know?
-# It is a list containing dictionaries, as proven by:
-print()
 
+# Answer: books_with_details is a list of dictionaries.
+# each dictionary has 3 key-value pairs with string values, corresponding to the title, author, and description of a book
+
+# the data type of the whole object
 print(type(books_with_details))
-print(type(books_with_details[0]))
-print(type(books_with_details[0]['title']))
-=======
-print(type(books_with_details[0]))
+
+# data type of one list element
+print(type(books_with_details[1]))
+
+# data type of a value within one of the nested list elements
+print(type(books_with_details[1]['title']))
 
 # 2.1
 # Create a function 'count_books' that returns the number of books in the books_with_details list
 # Parameters: Not needed for this function
 # Return: number of books (integer)
+
+
 def count_books():
-  return int(len(books_with_details))
+    return len(books_with_details)
+
 
 # 2.2
 # Check the number of books available in the books list using the count_books function
-print()
 print(count_books())
 
 # 2.3
@@ -182,15 +193,14 @@ print(count_books())
 # Parameters - author (string)
 # Return - author's books (list of strings)
 # Hint - You will need a for loop, if statement, .append() for this solution!
-def search_by_author(author):
-  authors_books = []
-  for book in books_with_details:
-    if book['author'] == author:
-      authors_books.append(book['title'])
-  return authors_books
 
+def search_by_author(author):
+    author_books = []
+    for book in books_with_details:
+        if book['author'] == author:
+            author_books.append(book['title'])
+    return author_books
 
 # 2.4
 # Search for book titles by the author 'Timothy Snyder' using the search_by_author function
-print()
 print(search_by_author('Timothy Snyder'))
