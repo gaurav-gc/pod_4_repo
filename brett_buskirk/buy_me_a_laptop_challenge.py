@@ -1,7 +1,12 @@
 # Challenge 1
 print("Challenge 1: All possible laptops\n")
 
+<<<<<<< HEAD:brett_buskirk/buy_me_a_laptop_challenge.py
 print("Question 1: You are given a list containing the laptop names. Print the names of each the laptops separately.")
+=======
+
+print("Question 1: You are given a list containing the laptop names. Print the names of each the laptops separately.\n")
+>>>>>>> Lee:lee_harvey/class_scripts/buy_me_a_laptop_challenge.py
 all_laptops = ["Apple MacBook Pro", "Asus Zenbook", "Dell XPS", "Lenovo IdeaPad", "Apple MacBook Air", "Sony Viao"]
 
 # TODO: Write code to print all laptop names
@@ -19,7 +24,12 @@ print("Below is a dictionary of the top 2 laptops of 2020 as reviewed by Tech Cr
     \n1. The url for the Apple Macbook Pro \
     \n2. All possible prices of the 16-inch MacBook Pro. \
     \n3. All the color options for Dell XPS 13. \
+<<<<<<< HEAD:brett_buskirk/buy_me_a_laptop_challenge.py
     \n4. The description of Dell XPS.")
+=======
+    \n4. The description of Dell XPS.\n")
+
+>>>>>>> Lee:lee_harvey/class_scripts/buy_me_a_laptop_challenge.py
 
 laptops = [
         {
@@ -91,7 +101,13 @@ print('4.', laptops[1]['description'])
 print()
 
 print("Question 2: Out of Stock laptops")
+<<<<<<< HEAD:brett_buskirk/buy_me_a_laptop_challenge.py
 print("Suppose that the 13-inch MacBook Pro in space gray color is sold out. Also, the same laptop with 1 TB storage is out of stock as well. Update the list of dictionaries such that these options are removed. Print the updated dictionary.")
+=======
+
+print("Suppose that the 13-inch MacBook Pro in space gray color is sold out. Also, the same laptop with 1 TB storage is out of stock as well. Update the list of dictionaries such that these options are removed. Print the updated dictionary.\n")
+
+>>>>>>> Lee:lee_harvey/class_scripts/buy_me_a_laptop_challenge.py
 
 # TODO: Update the laptops dictionary.
 laptops[0]['types'][0]['colors'].remove('space gray')
@@ -100,8 +116,16 @@ laptops[0]['types'][1]['storage'].remove('1 TB SSD')
 # TODO: Print the new dictionary.
 print(laptops)
 
+<<<<<<< HEAD:brett_buskirk/buy_me_a_laptop_challenge.py
 print("Question 3: listing all the prices")
 print("Time to look at the range of prices. Using a nested loops, print out all possible computer prices")
+=======
+print("\nQuestion 3: listing all the prices")
+
+print("Time to look at the range of prices. Using a nested loops, print out all possible computer prices.\n")
+=======
+
+>>>>>>> Lee:lee_harvey/class_scripts/buy_me_a_laptop_challenge.py
 
 # TODO: print out all possible prices for the laptops
 for laptop in laptops:
