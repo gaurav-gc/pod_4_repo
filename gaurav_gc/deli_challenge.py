@@ -7,6 +7,14 @@ cheeses = ['cheddar', 'swiss', 'pepper jack', 'provolone']
 # You want to create a menu soon, but first things first...
 # TODO: Let's capitalize the first letter of each word in each list using .capitalize()
 
+for i in range(len(meats)):
+    print(i)
+    meats[i] = meats[i].capitalize()
+
+for i in range(len(cheeses)):
+    cheeses[i] = cheeses[i].capitalize()
+
+print(cheeses)
 print()
 
 print('Question 2')
