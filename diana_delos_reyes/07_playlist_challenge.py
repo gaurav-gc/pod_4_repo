@@ -6,18 +6,23 @@ import os
 # But, you'll run your functions here
 
 # 1 Import all the functions in playlist_functions.py
+
+
 def display_playlist(playlist):
-	if len(playlist) == 0:
-		print('Playlist is empty!')
-	else:
-		for i in range(len(playlist)):
-			print(f'Track {i+1}: {playlist[i]["plays"]} plays \
+    if len(playlist) == 0:
+        print('Playlist is empty!')
+    else:
+        for i in range(len(playlist)):
+            print(f'Track {i+1}: {playlist[i]["plays"]} plays \
 				  \n\t-{playlist[i]["title"]} by {playlist[i]["artist"]}')
 
+
 def add_song(playlist, song):
-	# automatically initialize play count of song to 0
-	song['plays'] = 0
-	playlist.append(song)
+    # automatically initialize play count of song to 0
+    song['plays'] = 0
+    playlist.append(song)
+
+
 # This code initializes your playlist as an empty list. no songs in it yet!
 my_playlist = []
 
@@ -31,7 +36,8 @@ print('Question 2')
 # The song that you add should be a dictionary, with the following key-value pairs
 # 'artist' (string)
 # 'title' (string)
-add_song(my_playlist, {'artist': 'Nine Inch Nails', 'title': 'Head Like a Hole'})
+add_song(my_playlist, {'artist': 'Nine Inch Nails',
+         'title': 'Head Like a Hole'})
 '''
 example_song = {'artist': 'Lauryn Hill', 'title': 'Everything Is Everything'}
 '''
@@ -50,11 +56,15 @@ display_playlist(my_playlist)
 # See playlist_functions.py for details on how to define this function
 # THEN, call that function in this script to get the length of my_playlist
 print('Question 6')
+
+
 def get_playlist_length():
     print(len(my_playlist))
+
+
 get_playlist_length()
 
-7 At the top of this script, import numpy using the usual alias
+# At the top of this script, import numpy using the usual alias
 
 # 8: Using numpy, calculate the average monthly plays for a song
 # TODO: using the mean() function from numpy, calculate the average of monthly_plays

@@ -32,11 +32,12 @@ print('Question 3')
 def repeat(str, times):
     return str * times
 
+
 print(repeat('python', 3))
 print(repeat('[]', 3))
 print(repeat('//', 3))
-do you mean to print culys or an actual dictionary?  unable to print dictionary
-print(repeat('{}', 5))
+# do you mean to print culys or an actual dictionary?  unable to print dictionary
+print(repeat('{}', 3))
 print(repeat('{[', 3))
 
 print('')
@@ -50,8 +51,8 @@ print(fruits[1])
 print(fruits[2])
 print(fruits[3])
 print(fruits[4])
-index 5 not found, only up to index 4 in list
-print(fruits[5])
+# index 5 not found, only up to index 4 in list
+print(fruits[4])
 
 print('')
 
