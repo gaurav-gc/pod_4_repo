@@ -5,57 +5,33 @@ fb = 250
 google = 1400
 msft = 200
 
+stocks = {
+    'amzn' : ['Amazon', amazon],
+    'appl' : ['Apple', apple],
+    'fb' : ['Facebook', fb],
+    'goog' : ['Google', google],
+    'msft' : ['Microsoft', msft]
+}
+
 stock_amt = 0
-stock_amt = 0
-s_name = ''
+stock_details = []
 u_name = ""
 u_stock = ""
 
 def get_stock():
-    return input("Which stock are you interested in? \
+    return input("\nWhich stock are you interested in? \
     \nType 'amzn' for Amazon, 'appl' for Apple, 'fb' for Facebook, 'goog' for Google and 'msft' for Microsoft. \n")
 
 def get_name():
-    return input("Please enter your name: ")
+    return input("\nPlease enter your name: ")
 
 def get_savings():
-    return int(input("Please enter the amount of savings you would like to work with: "))
+    return int(input("\nPlease enter the amount of savings you would like to work with: "))
 
 def evaluate(s):
-    # match s:  Requires Python 3.10 or higher
-    #     case 'amzn':
-    #         return amazon, 'Amazon'
-    #     case 'appl':
-    #         return apple, 'Apple'
-    #     case 'fb':
-    #         return fb, 'Facebook'
-    #     case 'goog':
-    #         return google, 'Google'
-    #     case 'msft':
-    #         return msft, 'Microsoft'
-    if s == 'amzn':
-        return 'Amazon'
-    elif s == 'appl':
-        return 'Apple'
-    elif s == 'fb':
-        return 'Facebook'
-    elif s == 'goog':
-        return 'Google'
-    elif s == 'msft':
-        return 'Microsoft'
+    for stock in stocks:
+        if s == stock: return stocks[stock]
     evaluate(get_stock())
-
-def get_stock_cost(nam):
-    if nam == 'Amazon':
-        return amazon
-    elif nam == 'Apple':
-        return apple
-    elif nam == 'Facebook':
-        return fb
-    elif nam == 'Google':
-        return google
-    elif nam == 'Microsoft':
-        return msft
 
 def stock_purchase(sa, us):
     if sa and us:
@@ -64,7 +40,7 @@ def stock_purchase(sa, us):
     return 1
 
 def report(name, savings, stock, cost):
-    print(f"{name} has {savings} in savings and he can buy {int(savings / cost)} of {stock} at the current price of {cost}.")
+    print(f"{name} has {savings} in savings and he can buy {int(savings / int(cost))} of {stock} at the current price of {cost}.\n")
 
 print("Challenge 3.2: Playing with the stock market")
 
@@ -77,7 +53,7 @@ u_name = get_name()
 u_savings = get_savings()
 
 if u_savings < apple:
-    print(f"You do not have enough money to invest.  Sorry {u_name}.")
+    print(f"You do not have enough money to invest.  Sorry {u_name}.\n")
     exit()
 # Write code to ask the client the stock he is interested in and save it to another variable, as shown below.
 u_stock = get_stock()
@@ -90,15 +66,6 @@ print("Challenge 3.2.2: Perform user-specific calculations")
 # assert(u_stock == 'amzn' or u_stock == 'appl' or u_stock == 'fb' or u_stock == 'goog' or u_stock == 'msft')
 # assert(u_savings > 0)
 
-# More concise way
-
-s_name = evaluate(u_stock)
-stock_amt = get_stock_cost(s_name)
-while stock_purchase(stock_amt, u_savings):
-    print(f"I'm sorry, {u_name}, you don't have enough to purchase that stock.  Please choose another.")
-    s_name = evaluate(get_stock())
-    stock_amt = get_stock_cost(s_name)
-
 '''
 Your code should look like this:
 
@@ -108,13 +75,21 @@ elif ...
 else ...
 '''
 
+# More concise way
+
+stock_details = evaluate(u_stock)
+stock_amt = stock_details[1]
+while stock_purchase(stock_amt, u_savings):
+    print(f"\nI'm sorry, {u_name}, you don't have enough to purchase the {stock_details[0]} stock.  Please choose another.\n")
+    stock_details = evaluate(get_stock())
+    stock_amt = stock_details[1]
+
 print()
 
 print("Challenge 3.2.3: Output for the user the result")
 # Once you have calculated the number of stocks that can be purchased, print the result for the client. Result should be in a format like this:
 
 # Alex has $5000 in savings and he can buy 50 shares of Apple at the current price of $100.
-report(u_name, u_savings, s_name, stock_amt)
+report(u_name, u_savings, stock_details[0], stock_amt)
 
 print()
-
