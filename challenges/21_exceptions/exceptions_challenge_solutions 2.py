@@ -1,5 +1,5 @@
-# print('Question 1')
-
+print('Question 1')
+# TODO: Fix error(s) so that the if/else blocks runs without issues
 a = 1
 b = 2
 if a < b:
@@ -7,9 +7,11 @@ if a < b:
 else:
     print(f'{a} is greater than {b}')
 
+print('')
+
 print('Question 2')
 # TODO: Fix error(s) so that a list of sandwiches with unique combinations of meats and cheeses is printed at line 22
-
+# Contains a Syntax Error and Name Errors
 meats = ['ham', 'turkey', 'chicken', 'tuna']
 cheeses = ['cheddar', 'swiss', 'pepper jack', 'provolone']
 
@@ -59,23 +61,21 @@ num = input("Enter a number to compute it's square value: ")
 
 # Line 65 currently error out if you provide an input like a dictionary instead of a number
 # TODO: Rewrite line 65 with try/except blocks to handle all exceptions. If an exception exists, print 'Something Went Wrong!'
-try: 
-  print(int(num) * int(num))  
-except:
-    print('Something went wrong!')
-
 # TODO: Bonus: Add a finally block to print 'The End'
-#print(int(num) * int(num))
+try:
+    print(int(num) * int(num))
+except:
+    print('Hmm, Something went wrong!')
 
+
+print('')
 
 print('Question 6')
 
 # TODO: Change the code here so that the 'NameError' exception block runs.
-name = 'Yusuf'
 try:
-    print(number.capitalize())
+    print(name.capitalize())
 except NameError:
     print('You got to run this exception block! Your challenge is completed!')
 except:
     print('You should not be seeing this print statement. Try a different solution!')
-print()

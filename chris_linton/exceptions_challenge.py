@@ -1,11 +1,15 @@
-# print('Question 1')
-
+print('Question 1')
+# TODO: Fix error(s) so that the if/else blocks runs without issues
 a = 1
 b = 2
 if a < b:
+    # indented
     print(f'{a} is less than {b}')
 else:
+    # indented
     print(f'{a} is greater than {b}')
+
+print('')
 
 print('Question 2')
 # TODO: Fix error(s) so that a list of sandwiches with unique combinations of meats and cheeses is printed at line 22
@@ -14,9 +18,10 @@ meats = ['ham', 'turkey', 'chicken', 'tuna']
 cheeses = ['cheddar', 'swiss', 'pepper jack', 'provolone']
 
 sandwiches = []
-
+# added colon
 for meat in meats:
     for cheese in cheeses:
+        # corrected 'meet' to 'meat'
         sandwiches.append(f'{meat} & {cheese}')
 
 print(sandwiches)
@@ -28,12 +33,13 @@ print('Question 3')
 
 
 def repeat(str, times):
-    return str * times
+        return str * times
 
 
 print(repeat('python', 3))
 print(repeat('[]', 3))
 print(repeat('//', 3))
+# add quotes '{}'
 print(repeat('{}', 5))
 print(repeat('{[', 3))
 
@@ -43,7 +49,7 @@ print('Question 4')
 # TODO: Fix error(s) in the print statements to look up all 5 fruits by their index
 
 fruits = ['apples', 'oranges', 'bananas', 'tomatoes', 'cherries']
-
+# indexes start at 0 and go to 4
 print(fruits[0])
 print(fruits[1])
 print(fruits[2])
@@ -51,31 +57,34 @@ print(fruits[3])
 print(fruits[4])
 
 
+
 print('')
 
 print('Question 5')
 
+
 num = input("Enter a number to compute it's square value: ")
+
 
 # Line 65 currently error out if you provide an input like a dictionary instead of a number
 # TODO: Rewrite line 65 with try/except blocks to handle all exceptions. If an exception exists, print 'Something Went Wrong!'
-try: 
-  print(int(num) * int(num))  
-except:
-    print('Something went wrong!')
-
 # TODO: Bonus: Add a finally block to print 'The End'
-#print(int(num) * int(num))
+try:
+    print(int(num) * int(num))
+except:
+    print('Something Went Wrong!')
 
+print()
 
 print('Question 6')
 
 # TODO: Change the code here so that the 'NameError' exception block runs.
-name = 'Yusuf'
+# change variable to 'first_name' so 'name' is not found when used to call function
+first_name = 'Yusuf'
+
 try:
-    print(number.capitalize())
+    print(name.capitalize())
 except NameError:
     print('You got to run this exception block! Your challenge is completed!')
 except:
     print('You should not be seeing this print statement. Try a different solution!')
-print()
