@@ -1,0 +1,74 @@
+<!-- /* 
+1. HTML
+Your page should have a <head> section with metadata and your page's <title>, and a <body> section with all the content.
+Content:
+2. Add CSS styling
+Write all your CSS code in a file in the same directory called styles.css. Update the <head> of your HTML file to use the CSS code you write in that file. Then, do the following
+1. Make your main heading centered on the page
+2. Using a class, make all paragraph text AND your list of facts about you in the font Verdana
+3. Using another class, make all paragraph text any color other than black
+4. Using element IDs, make each of the 3 facts about you (in your list) a different color. Make only 1 of the facts written in italics.
+5. Make the labels of the form bold
+• BONUS: Align the images at the center of the page */
+ -->
+
+ <html>
+     <head>
+        <link rel="stylesheet" href="./styles.css">
+
+     </head>
+     <body>
+         <h1 class="llukkah-header">Llukkah</h1>
+         <!-- using an unordered list to list 3 facts about myself -->
+         <ul class="verdana-font">3 Random Facts About Me:
+             <li id="fact-1" class="verdana-font">I love a good Random Fact</li>
+             <li id="fact-2"class="verdana-font">I live off gluten-free pizza and tea.</li>
+             <li id="fact-3"class="verdana-font">I cook anything and everything at home.</li>
+         </ul>
+         <div>
+         <div>
+             <h2>Random Facts of the World</h2>
+             <p class="verdana-font p-font">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dignissimos explicabo aut esse cumque ratione, dolore dolor libero molestiae beatae officiis optio quisquam nulla a quam obcaecati vel delectus necessitatibus?</p>
+        </div>
+        <div>
+            <form>
+                <p class="verdana-font p-font">How many Random Facts do I read a day?</p>
+                <p class="verdana-font p-font">Type a number:</p>
+                <input type="number">
+                <p class="verdana-font p-font">Or choose:</p>
+                <input type="radio">The limit does not exist</input>
+                <br>
+                <label for="fname">First name:</label>
+                <br>
+                <input type="text" id="fname" name="fname">
+                <br>
+                <label for="lname">Last name:</label>
+                <br>
+                <input type="text" id="lname" name="lname">
+              </form>
+        </div>
+        </div>
+     </body>
+     <footer>
+         <div>
+             <div>
+                 <a href="https://www.reddit.com" target=_blank><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Reddit_logo.svg/1024px-Reddit_logo.svg.png" height:"75" width="75"/></a>
+                 <p class="verdana-font p-font">Reddit is my favorite website, but check out my other favorites:</p>
+             </div>
+             <div>
+                 <ul>
+                 <!-- using images that are linked to external websites. target=_blank opens the external link on a new tab. -->
+                    <li>
+                        <a href="https://www.github.com/llukkah" target=_blank>
+                            <img src="./github.svg" alt="GitHub Icon"/>
+                        </a></li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/llukkahrey" target=_blank>
+                            <img src="./linkedin.svg" alt="LinkedIn Icon"/>
+                        </a>
+                    </li>
+                </ul>
+             </div>
+         </div>
+     </footer>
+ </html>

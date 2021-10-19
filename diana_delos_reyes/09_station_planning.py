@@ -1,12 +1,14 @@
+print('test')
 from inheritance import *
+
 
 print('')
 print('')
 print('')
 print('Bus Station 1')
-bus1 = BusStation(station_name="la playa", location="on the beach", routes=['tulum', 'cabo', 'mexico'], open=True)
-bus1.open_station()
-bus1.close_station()
+bus1 = BusStation(station_name="la playa", location="on the beach", routes=['tulum', 'cabo', 'mexico'])
+# bus1.open_station()
+# bus1.close_station()
 bus1.show_info()
 
 print('')

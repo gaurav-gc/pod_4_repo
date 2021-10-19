@@ -1,0 +1,37 @@
+
+
+@font-face {
+  font-family: "verdana";
+  src: url("./verdana.ttf");
+}
+.llukkah-header {
+  text-align: center;
+}
+.verdana-font {
+  font-family: verdana, sans-serif;
+}
+label {
+  font-weight: 900;
+}
+
+.p-font {
+  color: #94d0d0;
+}
+
+#fact-1 {
+  color: #9e16e9;
+}
+
+#fact-2 {
+  color: #5ab946;
+  font-style: italic;
+}
+
+#fact-3 {
+  color: #3e30cf;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
