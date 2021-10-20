@@ -55,6 +55,7 @@ authors = ['Bryan Stevenson', 'Michelle Alexander', 'Kamala Harris', 'Resmaa Men
 num = 0
 while num < len(titles) - 1:
     my_library.add(titles[num], authors[num])
+    num += 1
 
 '''
 Part #3: 
