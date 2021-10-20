@@ -49,7 +49,7 @@ print(a[x])
 print()
 
 #xx = top_100[:10]
-#print(xx)
+# print(xx)
 
 # TODO: Let's convert the list "top_100" back into a string. Assign it to a variable called "top_100_str".
 # Note: Print your new variable to see the string version of the movies
