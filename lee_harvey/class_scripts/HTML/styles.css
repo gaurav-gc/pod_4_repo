@@ -17,7 +17,30 @@ h3{
     text-align: center;
 }
 p{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: 20px;
     color:#cf5ffc;
+}
+#bold_green_label{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #018001;
+}
+#bold_ital_gold_label{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    color: gold;
+}
+#cyan_bold_label{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: #17ffff;
+}
+.paragraph_color{
+    color: gold;
+}
+label{
+    font-weight: bold;
+    color: #17ffff;
 }

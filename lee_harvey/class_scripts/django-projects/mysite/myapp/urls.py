@@ -4,6 +4,7 @@ from myapp.views import hello, goodbye
 urlpatterns = [
     # myapp/
     path('', hello, name='hello'),
+    path('hello', hello, name='hello'),
     path('goodbye', goodbye, name='goodbye'),
     path('goodbye/<str:name>', goodbye, name='goodbye'),
     # myapp/<str:name>
