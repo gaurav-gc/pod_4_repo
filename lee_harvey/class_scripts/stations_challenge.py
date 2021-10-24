@@ -30,8 +30,6 @@ class Station:
 class SubwayStation(Station):
     def __init__(self, station_name, location, lines = []):
         super().__init__(station_name, location)
-        # self.station_name = station_name
-        # self.location = location
         self.lines = lines
     
     def show_info(self):
@@ -65,8 +63,6 @@ BusStation should:
 class BusStation(Station):
     def __init__(self, station_name, location, routes=[]):
         super().__init__(station_name, location)
-        # self.station_name = station_name
-        # self.location = location
         self.routes = routes
         self.open = True
 
