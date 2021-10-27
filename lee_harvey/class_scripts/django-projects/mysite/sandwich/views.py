@@ -10,12 +10,6 @@ ingredients = {
 }
 
 
-def sandwich(request):
-    if request.method == 'GET':
-        return render(request = request, 
-                    template_name = 'sandwich.html', 
-                    context = {'ingredients': ingredients.keys()})
-
 def ingredients_list(request, ingredient_type):
     if request.method == 'GET':
         # if ingredient type doesn't exist, raise Http404
@@ -38,15 +32,32 @@ def sandwich_generator(request):
 
 def menu(request):
     if request.method == 'GET':
-        sandwiches = []
-        lst = []
-        menu = []
-        for meat in ingredients['meats']:
-            for cheese in ingredients['cheeses']:
-                sandwiches.append([meat, cheese])
-        for sammy in sandwiches:
-            lst.append(str.join(' & ', sammy))
-        for itm in lst:
-            for topping in ingredients['toppings']:
-                menu.append(f"{itm.title()} with {topping.title()}")
+        menu = _process_menu()        
         return render(request, 'menu.html', context={ 'menu': menu })
+
+def _process_menu():
+    lst = []
+    for meat in ingredients['meats']:
+            for cheese in ingredients['cheeses']:
+                for topping in ingredients['toppings']:
+                    lst.append(f"{meat.title()} & {cheese.title()} with {topping.title()}")
+    return lst
+
+def _split_menu():
+    first_half, second_half = [], []
+    lst = _process_menu()
+    cnt = len(lst)
+    while cnt < len(lst) / 2:
+        first_half.append(lst[cnt])
+        cnt += 1
+    while cnt < len(lst):
+        second_half.append(lst[cnt])
+        cnt += 1
+    return first_half, second_half
+
+def sandwich(request):
+    if request.method == 'GET':
+        left_menu, right_menu = _split_menu()
+        return render(request = request, 
+                    template_name = 'sandwich.html', 
+                    context = {'ingredients': ingredients.keys(), 'left' : left_menu, 'right' : right_menu})

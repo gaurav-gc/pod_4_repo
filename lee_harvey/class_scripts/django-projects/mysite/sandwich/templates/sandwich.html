@@ -1,17 +1,88 @@
-<h1>Sandwich Home</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwich App</title>
+    <style>
+        p{
+            margin-left: -80px;
+        }s
+        .form-divd{
+            margin-left: -20px;
+        }
+        .container {
+            height: auto;
+            margin-left: -80px;
+            overflow: hidden;
+        }
+        .right {
+            width: 200px;
+            float: right;
+        }
+        .left {
+            width: 500px;
+            float: left;
+            overflow: hidden;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        h1{
+            text-align: center;
+        }
+        h3{
+            text-indent: 195px;
+        }
+        ul li {
+            display: inline-block; 
+            white-space: pre;
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Sandwich Home</h1>
 
-<h3>Ingredients</h3>
-
-<ul>
-    {% for ingredient in ingredients %}
-    <li>
-        <a href="{% url 'ingredients_list' ingredient %}">{{ ingredient }}</a>
-    </li>
-    {% endfor %}
-</ul>
-
-<p>Click the button if you are hungry!</p>
-
-<form action="{% url 'sandwich_generator' %}">
-    <input type="submit" value="Make a sandwich!" />
-</form>
+    <div class='container'>
+        <div class='left'>
+            <ul><h3>Ingredients</h3>
+                {% for ingredient in ingredients %}
+                <li>
+                    <a href="{% url 'ingredients_list' ingredient %}">{{ ingredient }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class='right'>
+            <br><p>Click the button if you are hungry!</p>
+            <form class="form-divd" action="{% url 'sandwich_generator' %}" text-align="center">
+                <input type="submit" value="Make a sandwich!" />
+            </form>
+        </div>
+    </div>
+    <form action="{% url 'menu' %}">
+        <br><br><br><input class="center" type="submit" value="See What's Available" />
+    </form>
+    <div class='container'>
+        <div class='left'>
+            <ol>
+                {% for item in left %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class='right'>
+            <ol>
+                {% for item in right %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

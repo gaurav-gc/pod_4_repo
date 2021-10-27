@@ -5,16 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        h5{
+            text-align: center;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        ol li{
+            column-count: 2;
+            column-gap: 20px;
+            column-width: auto;
+        }
+    </style>
 </head>
-<body>
-    
+<body Background-color='#000000' text-color="cyan">
+    <h1 text-align='center'>Sandwich Menu</h1>
+
+    <form action="{% url 'sandwich' %}">
+        <input class="center" type="submit" value="Home" />
+    </form>
+
+    <ol>
+        {% for sandwich in menu %}
+            <li>{{ sandwich }}</li>
+        {% endfor %}
+    </ol>
 </body>
 </html>
-
-<h1 text-align='center'>Sandwich Menu</h1>
-
-<ol>
-    {% for sandwich in menu %}
-        <li>{{ sandwich }}</li>
-    {% endfor %}
-</ol>
