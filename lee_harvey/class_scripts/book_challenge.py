@@ -44,12 +44,18 @@ My Grandmother's Hands - Resmaa Menakem
 Finally, prinb the books attribute of my_library to make sure your books have been added!
 '''
 print('\nPart 2\n')
-my_library.add('Just Mercy', 'Bryan Stevenson')
-my_library.add('The New Jim Crow', 'Michelle Alexander')
-my_library.add('The Truths We Hold', 'Kamala Harris')
-my_library.add('My Grandmother\'s Hands', 'Resmaa Menaken')
-print(my_library.books)
+# my_library.add('Just Mercy', 'Bryan Stevenson')
+# my_library.add('The New Jim Crow', 'Michelle Alexander')
+# my_library.add('The Truths We Hold', 'Kamala Harris')
+# my_library.add('My Grandmother\'s Hands', 'Resmaa Menaken')
+# print(my_library.books)
 
+titles = ['Just Mercy', 'The New Jim Crow', 'The Truths We Hold', 'My Grandmother\'s Hands']
+authors = ['Bryan Stevenson', 'Michelle Alexander', 'Kamala Harris', 'Resmaa Menakem']
+num = 0
+while num < len(titles) - 1:
+    my_library.add(titles[num], authors[num])
+    num += 1
 
 '''
 Part #3: 

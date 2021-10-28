@@ -26,3 +26,8 @@ class Booklist():
 		self.books = sorted_titles
 		for book in self.books:
 			print(book['title'])
+		
+		## This worked for someone else, why won't it work for me?
+		# for book in self.books:
+		# 	self.books.sort()
+		# print(self.books)
