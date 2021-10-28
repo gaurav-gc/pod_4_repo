@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+}
+
+.verdana {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text-color {
+  color: chocolate;
+}
+
+#li-1 {
+  color: red
+}
+
+#li-2 {
+  color: green;
+}
+
+#li-3 {
+  color: blue;
+  font-style: italic;
+}
+
+label {
+  font-weight: bold;
+}
+
+#gallery {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
