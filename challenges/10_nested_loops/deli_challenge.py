@@ -13,6 +13,12 @@ print('Question 2')
 # Great! Your lists look much better. You need to come up with every combination of meats and cheeses for your menu.
 # TODO: Use nested loops to create every combination of meat and cheese and add it to the sandwiches list
 sandwiches = []
+for meat in meats:
+    for cheese in cheeses:
+        sandwiches.append(f'{meat} & {cheese}')
+
+print(sandwiches)
+
 
 print()
 
@@ -20,3 +26,15 @@ print('Question 3')
 # TODO: Let's create an input to take a customer order for a sandwich, for example: 'Ham & Swiss'
 # TODO: Loop over the sandwiches list.
 # TODO: If it exists, print 'Great choice! 1 Ham & Swiss coming right up!'
+
+sandwhich = print(input("What sandwhich?"))
+
+
+def check_Sandwhich(sandwhich):
+    if sandwhich in sandwiches:
+        print(f'Great choice! 1 {sandwhich} coming right up!')
+    else:
+        print(f'not a sandwhich')
+
+
+check_Sandwhich(sandwhich)
