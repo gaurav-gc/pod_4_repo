@@ -21,4 +21,6 @@ urlpatterns = [
     path(('myapp/'), include('myapp.urls')),
     path(('sandwich/'), include('sandwich.urls')),
     path(('practice/'), include('practice.urls')),
+    path('todo/', include('todo.urls')),
+    path('notes/', include('notes.urls')),
 ]
