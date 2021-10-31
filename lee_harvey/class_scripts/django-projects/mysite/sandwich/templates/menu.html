@@ -6,11 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <style>
+        body{
+            background-color: black;
+            color: #ff00ffda;
+        }
         h1{
             text-align: center;
+            color: blue;
         }
-        h5{
+        input{
             text-align: center;
+            color: cyan;
+            border-color: cyan;
         }
         .center{
             display: block;
@@ -19,14 +26,12 @@
             
         }
         ol li{
-            column-count: 2;
-            column-gap: 20px;
-            column-width: auto;
+            text-align: center;
         }
     </style>
 </head>
-<body Background-color='#000000' text-color="cyan">
-    <h1 text-align='center'>Sandwich Menu</h1>
+<body Background-color='#000000'>
+    <h1>Sandwich Menu</h1>
 
     <form action="{% url 'sandwich' %}">
         <input class="center" type="submit" value="Home" />
