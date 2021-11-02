@@ -1,0 +1,24 @@
+<h1>Notes</h1>
+
+
+
+
+
+<ul>
+    {% for memo in note %}
+    
+    <li><a href="{% url 'note' memo.note_id %}">{{ memo.note }}</a></li>
+
+    {% endfor %}
+</ul>
+
+
+
+<form action="{% url 'notes' %}" method="POST">
+    {% csrf_token %} {{ form }}
+    <input type="submit" name="create" value="Create" />
+</form>
+
+<form action="{% url 'todo' %}">
+    <input type="submit" value="Todo" />
+</form>
