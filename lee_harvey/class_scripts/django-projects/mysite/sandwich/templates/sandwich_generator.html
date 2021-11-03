@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate</title>
+    <style>
+        body{
+            background-color: black;
+            color: #ff00ffda;
+        }
+        input{
+            text-align: center;
+            color: cyan;
+            border-color: cyan;
+        }
+        h1{
+            text-align: center;
+            color: blue;
+        }
+        h5{
+            text-align: center;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ sandwich|title }}</h1>
+    <h5>Keep refreshing the page for a new sandwich!</h5>
+
+    <form action="{% url 'sandwich' %}">
+        <input class="center" type="submit" value="Home" />
+    </form>
+</body>
+</html>
+
+

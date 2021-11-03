@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwich App</title>
+    <style>
+        p{
+            margin-left: -60px;
+        }
+        .container {
+            height: auto;
+            margin-left: -80px;
+            overflow: hidden;
+        }
+        .right {
+            width: 200px;
+            float: right;
+        }
+        .left {
+            width: 500px;
+            float: left;
+            overflow: hidden;
+        }
+        .menuRight {
+            width: 350px;
+            float: right;
+        }
+        .menuLeft {
+            width: 350px;
+            float: left;
+            overflow: hidden;
+        }
+        .menucontainer{
+            height: auto;
+            margin-left: 80px;
+            margin-right: 20px;
+            overflow: hidden;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        body{
+            background-color: black;
+            color: #ff00ffda;
+        }
+        input{
+            text-align: center;
+            color: cyan;
+            border-color: cyan;
+        }
+        h1{
+            text-align: center;
+            color: Blue;
+        }
+        h4{
+            text-indent: 60px;
+            color: blue;
+        }
+        h3{
+            text-indent: 195px;
+            color: blue;
+        }
+        ul li {
+            display: inline-block; 
+            white-space: pre;
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Sandwich Home</h1>
+
+    <div class='container'>
+        <div class='left'>
+            <ul><h3>Ingredients</h3>
+                {% for ingredient in ingredients %}
+                <li>
+                    <a href="{% url 'ingredients_list' ingredient %}">{{ ingredient }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class='right'>
+            <br><br><form action="{% url 'sandwich_generator' %}">
+                <input type="submit" value="Make a sandwich!" />
+            </form>
+            <p>Click the button if you are hungry!</p>
+        </div>
+    </div>
+    <form action="{% url 'menu' %}">
+        <br><br><br><input class="center" type="submit" value="See What's Available" />
+    </form>
+    <div class='menucontainer'>
+        <div class='menuLeft'>
+            <ol><h4>Menu</h4>
+                {% for item in leftmenu %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class='menuRight'>
+            <ol><h4>Menu</h4>
+                {% for item in rightmenu %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

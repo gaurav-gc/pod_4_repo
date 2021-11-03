@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body{
+            background-color: black;
+            color: #ff00ffda;
+        }
+        h1{
+            text-align: center;
+            color: blue;
+        }
+        input{
+            text-align: center;
+            color: cyan;
+            border-color: cyan;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        ol li{
+            text-align: center;
+        }
+    </style>
+</head>
+<body Background-color='#000000'>
+    <h1>Sandwich Menu</h1>
+
+    <form action="{% url 'sandwich' %}">
+        <input class="center" type="submit" value="Home" />
+    </form>
+
+    <ol>
+        {% for sandwich in menu %}
+            <li>{{ sandwich }}</li>
+        {% endfor %}
+    </ol>
+</body>
+</html>

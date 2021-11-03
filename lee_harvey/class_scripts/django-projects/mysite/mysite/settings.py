@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp.apps.MyappConfig',
+    'sandwich.apps.SandwichConfig',
+    'practice.apps.PracticeConfig',
+    'todo.apps.TodoConfig',
+    'notes.apps.NotesConfig',
 ]
 
 MIDDLEWARE = [
