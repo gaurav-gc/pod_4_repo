@@ -2,4 +2,8 @@
     {% csrf_token %} {{ form }}
     <input type="submit" name="save" value="Save" />
     <input type="submit" name="delete" value="Delete" />
+    <input type="submit" name="complete" value="Mark Complete" />
 </form>
+
+<a href="{% url 'notes' %}" style="position: absolute; bottom: 40px;">Go to Notes</a>
+<a href="{% url 'todo' %}" style="position: absolute; bottom: 15px;">Go to Todo List</a>

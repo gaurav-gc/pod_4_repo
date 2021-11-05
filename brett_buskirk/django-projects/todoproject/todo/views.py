@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Todo
-from .forms import TodoForm
+from .models import Todo, Note
+from .forms import TodoForm, NoteForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -42,4 +42,23 @@ def task(request, task_id):
                 Todo.objects.filter(pk=task_id).update(task=task)
         elif 'delete' in request.POST:
             Todo.objects.filter(pk=task_id).delete()
+        elif 'complete' in request.POST:
+            Todo.objects.filter(pk=task_id).update(completed=True)
         return HttpResponseRedirect(reverse('todo'))
+
+def notes(request):
+  if request.method == 'GET':
+    notes = Note.objects.all().order_by('note_id')
+    form = NoteForm()
+    return render(
+      request=request, 
+      template_name='notes.html', 
+      context={ 'notes': notes, 'form': form }
+    )
+
+  if request.method == 'POST':
+    form=NoteForm(request.POST)
+    if form.is_valid():
+      note_text = form.cleaned_data['note_text']
+      Note.objects.create(note_text=note_text)
+    return HttpResponseRedirect(reverse('notes'))

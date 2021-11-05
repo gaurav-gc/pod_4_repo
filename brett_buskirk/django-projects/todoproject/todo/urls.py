@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.todo, name='todo'),
-    path('<int:task_id>', views.task, name='task')
+    path('<int:task_id>', views.task, name='task'),
+    path('notes', views.notes, name='notes')
 ]
