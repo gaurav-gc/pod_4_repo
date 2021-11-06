@@ -1,0 +1,12 @@
+<!-- display form that takes user to url name 'task' and runs POST method in views to input data -->
+<form action="{% url 'task' task_id %}" method="POST">
+    <!-- authentication token to make post request in django & 
+        form object passed to template from views -->
+    {% csrf_token %} {{ form }}
+    <!-- input field with a save button for saving task to QuerySet -->
+    <input type="submit" name="save" value="Save" />
+    <!-- input field with a delete button for deleting task from QuerySet -->
+    <input type="submit" name="delete" value="Delete" />
+    <!-- input field with a mark complete button for changing completed field attribute of task to True -->
+    <input type="submit" name="complete" value="Mark Complete" />
+</form>

@@ -1,0 +1,19 @@
+<h1>Notes to self</h1>
+<!-- ordered list of notes -->
+<ol>
+    <!-- for loop that cycles through each note in notes QuerySet -->
+    {% for note in notes %}
+    <!-- print each note instance note_text attribute from notes as a list item -->
+    <li>{{ note.note_text }}</li>
+    {% endfor %}
+</ol>
+<!-- display form that takes user to url name 'note' and runs POST method in views to input data -->
+<form action="{% url 'note' %}" method="POST">
+    <!-- authentication token to make post request in django & 
+        form object passed to template from views -->
+    {% csrf_token %} {{ form }}
+    <!-- input field with a create button for submitting input data to be added to QuerySet -->
+    <input type="submit" name="create" value="Create" />
+</form>
+<!-- link to todo web page -->
+<a href="{% url 'todo' %}">Todo page</a>
