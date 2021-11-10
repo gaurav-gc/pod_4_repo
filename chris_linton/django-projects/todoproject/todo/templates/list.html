@@ -1,0 +1,33 @@
+<h1>Tasks</h1>
+<!-- heading for tasks that have not been completed -->
+<h2>To Do:</h2>
+<!-- unordered list of incomplete tasks -->
+<ul>
+    <!-- for loop that cycles through each incomplete_task in incomplete_tasks QuerySet -->
+    {% for incomplete_task in incomplete_tasks %}
+    <!-- print each incomplete_task instance task attribute from incomplete_tasks as a list item -->
+    <!-- makes each list item a link to the url named 'task' -->
+    <li><a href="{% url 'task' incomplete_task.task_id %}">{{ incomplete_task.task }}</a></li>
+    {% endfor %}
+</ul>
+<!-- heading for list of completed tasks -->
+<h2>Complete:</h2>
+<!-- unordered list of complete tasks -->
+<ul>
+    <!-- for loop that cycles through each complete_task in complete_tasks QuerySet -->
+    {% for completed_task in completed_tasks %}
+    <!-- print each complete_task instance task attribute from complete_tasks as a 
+        list item & makes each list item a link to the url named 'task' -->
+    <li><a href="{% url 'task' completed_task.task_id %}">{{ completed_task.task }}</a></li>
+    {% endfor %}
+</ul>
+<!-- display form that takes user to url name 'todo' and runs POST method in views to input data -->
+<form action="{% url 'todo' %}" method="POST">
+    <!-- authentication token to make post request in django & 
+        form object passed to template from views -->
+    {% csrf_token %} {{ form }}
+    <!-- input field with a create button for submitting input data to be added to QuerySet -->
+    <input type="submit" name="create" value="Create" />
+</form>
+<!-- link to notes web page -->
+<a href="{% url 'note' %}">Notes page</a>
