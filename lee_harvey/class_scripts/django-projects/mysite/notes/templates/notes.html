@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Notes</h1>
@@ -19,7 +24,7 @@
         {% csrf_token %} {{ form }} 
         <input type="submit" name="create" value="Create" />
     </form>
-
+    
     <br><form action="{% url 'todo' %}">
         <input type="submit" value="Add a Task" />
     </form>

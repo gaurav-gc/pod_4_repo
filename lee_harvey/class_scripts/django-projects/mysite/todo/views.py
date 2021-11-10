@@ -37,12 +37,15 @@ def task(request, task_id):
                     })
     
     if request.method == 'POST':
-        if 'save' in request.POST or 'completed' in request.POST:
+        if 'completed' in request.POST:
+            todo = Todo.objects.get(pk = task_id)
+            complete = False if todo.completed else True
+            todo.completed = complete
+            todo.save()
+        elif 'save' in request.POST:
             form = TodoForm(request.POST)
             if form.is_valid():
-                task=form.cleaned_data['task']
-                if 'completed' in request.POST:
-                    Todo.objects.filter(pk=task_id).update(completed = True)
+                task = form.cleaned_data['task']
                 Todo.objects.filter(pk = task_id).update(task = task)
         elif 'delete' in request.POST:
             Todo.objects.filter(pk=task_id).delete()
