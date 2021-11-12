@@ -1,0 +1,15 @@
+<style>
+    input[type='text'],
+    input[type='url'],
+    textarea {
+        display: block;
+    }
+</style>
+<h1>Create Post</h1>
+<!-- display form that takes user to url name 'create' & runs POST in create method of views to input data -->
+<form action="{% url 'create' %}" method="POST">
+    <!-- authentication token for making post request in django & form object passed to template from views -->
+    {% csrf_token %} {{ form }}
+    <!-- input field with a create button for submitting input data & creating a new Post instance in the QuerySet -->
+    <input type="submit" value="Create" />
+</form>
