@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Post
+from .models import Post, Comment
 from .forms import EditorForm, CommentForm
 
 # Create your views here.
@@ -9,7 +9,11 @@ def blog(request):
     if request.method == 'GET':
     # get QuerySet object containing posts in descending order of post_id
         posts = Post.objects.all().order_by('-post_id')
-        return render(request=request, template_name='blog.html', context={ 'posts': posts })
+        comments = {}
+        for post in posts:
+            comments[post.post_id] = post.comments
+        print(comments)
+        return render(request=request, template_name='blog.html', context={ 'posts': posts, 'comments' : comments })
 
 def create(request):
     if request.method == 'GET':
@@ -73,3 +77,6 @@ def edit(request, post_id):
                 Post.objects.filter(pk=post_id).delete()
         # redirect to 'blog/'
         return HttpResponseRedirect(reverse('blog'))
+
+def comment(request):
+    pass
