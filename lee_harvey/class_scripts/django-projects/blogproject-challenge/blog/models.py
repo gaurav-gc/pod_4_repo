@@ -19,8 +19,10 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+    @property
     def comments(self):
-        return Comment.objects.filter(Post)
+        responses = Comment.objects.all().order_by('-id')
+        return Comment.objects.filter(Post, responses)
 
 class Comment(models.Model):
     comment_id = models.AutoField(primary_key = True)

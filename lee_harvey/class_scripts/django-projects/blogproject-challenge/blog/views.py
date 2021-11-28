@@ -7,13 +7,16 @@ from .forms import EditorForm, CommentForm
 # Create your views here.
 def blog(request):
     if request.method == 'GET':
-    # get QuerySet object containing posts in descending order of post_id
+    # get QuerySet object containing posts in descending order of id
         posts = Post.objects.all().order_by('-post_id')
-        comments = {}
+        #This is to capture the objects from comments
+        responses = {}
+        #Iterate over posts to assign the Comment objects
         for post in posts:
-            comments[post.post_id] = post.comments
-        print(comments)
-        return render(request=request, template_name='blog.html', context={ 'posts': posts, 'comments' : comments })
+            responses[post.id] = post.comments()
+            #Doesn't allow accesse to Comment.comment
+        return render(request=request, template_name='blog.html', context={ 'posts': posts, 'comments' : responses })
+        #Pass the responses dictionary to html by comments identifier
 
 def create(request):
     if request.method == 'GET':
@@ -30,7 +33,7 @@ def create(request):
             img_link = form.cleaned_data['img_link']
             body = form.cleaned_data['body']
             tags = form.cleaned_data['tags']
-            # filter QuerySet object by post_id
+            # filter QuerySet object by id
             Post.objects.create(
                 title = title,
                 img_link = img_link,
