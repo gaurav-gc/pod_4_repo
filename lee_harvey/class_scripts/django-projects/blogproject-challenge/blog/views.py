@@ -1,15 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Post
+from .models import Post, Comment
 from .forms import EditorForm, CommentForm
 
 # Create your views here.
 def blog(request):
     if request.method == 'GET':
-    # get QuerySet object containing posts in descending order of post_id
+    # get QuerySet object containing posts in descending order of id
         posts = Post.objects.all().order_by('-post_id')
-        return render(request=request, template_name='blog.html', context={ 'posts': posts })
+        #This is to capture the objects from comments
+        responses = {}
+        #Iterate over posts to assign the Comment objects
+        for post in posts:
+            responses[post.id] = post.comments()
+            #Doesn't allow accesse to Comment.comment
+        return render(request=request, template_name='blog.html', context={ 'posts': posts, 'comments' : responses })
+        #Pass the responses dictionary to html by comments identifier
 
 def create(request):
     if request.method == 'GET':
@@ -26,7 +33,7 @@ def create(request):
             img_link = form.cleaned_data['img_link']
             body = form.cleaned_data['body']
             tags = form.cleaned_data['tags']
-            # filter QuerySet object by post_id
+            # filter QuerySet object by id
             Post.objects.create(
                 title = title,
                 img_link = img_link,
@@ -73,3 +80,6 @@ def edit(request, post_id):
                 Post.objects.filter(pk=post_id).delete()
         # redirect to 'blog/'
         return HttpResponseRedirect(reverse('blog'))
+
+def comment(request):
+    pass
